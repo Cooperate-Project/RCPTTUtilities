@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/de.cooperateproject.rcptt.ecl.cdoserver.feature_1.0.0.201702251425.jar" id="de.cooperateproject.rcptt.ecl.cdoserver.feature" version="1.0.0.201702251425">
-      <category name="ecl_commands"/>
-   </feature>
-   <category-def name="ecl_commands" label="ECL Commands"/>
-</site>
