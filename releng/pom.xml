@@ -15,6 +15,7 @@
 
 	<modules>
 		<module>de.cooperateproject.rcptt.updatesite</module>
+		<module>de.cooperateproject.rcptt.updatesite.aggregated</module>
 	</modules>
 
 </project>
