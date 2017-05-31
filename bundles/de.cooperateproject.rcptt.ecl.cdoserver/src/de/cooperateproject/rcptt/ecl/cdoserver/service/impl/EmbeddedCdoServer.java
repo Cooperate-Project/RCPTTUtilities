@@ -1,4 +1,4 @@
-package de.cooperateproject.rcptt.ecl.cdoserver;
+package de.cooperateproject.rcptt.ecl.cdoserver.service.impl;
 
 import java.sql.SQLException;
 import java.util.HashMap;

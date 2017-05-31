@@ -20,6 +20,11 @@
             name="StartCdoServer"
             namespace="http://cooperateproject.de/rcptt/ecl/cdoserver.ecore">
       </scriptlet>
+      <scriptlet
+            class="de.cooperateproject.rcptt.ecl.cdoserver.service.StopCdoServerService"
+            name="StopCdoServer"
+            namespace="http://cooperateproject.de/rcptt/ecl/cdoserver.ecore">
+      </scriptlet>
    </extension>
 
 </plugin>

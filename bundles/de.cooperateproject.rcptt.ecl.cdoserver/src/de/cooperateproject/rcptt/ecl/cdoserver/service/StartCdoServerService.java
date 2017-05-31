@@ -7,7 +7,7 @@ import org.eclipse.rcptt.ecl.core.Command;
 import org.eclipse.rcptt.ecl.runtime.ICommandService;
 import org.eclipse.rcptt.ecl.runtime.IProcess;
 
-import de.cooperateproject.rcptt.ecl.cdoserver.EmbeddedCdoServer;
+import de.cooperateproject.rcptt.ecl.cdoserver.service.impl.EmbeddedCdoServer;
 
 public class StartCdoServerService implements ICommandService {
 

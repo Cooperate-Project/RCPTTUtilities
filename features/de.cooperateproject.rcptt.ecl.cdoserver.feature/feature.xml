@@ -19,18 +19,10 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.rcptt.ecl.core"/>
-      <import plugin="org.eclipse.emf.cdo" version="4.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.cdo.net4j" version="4.1.400" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.cdo.server" version="4.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.cdo.server.db" version="4.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.cdo.server.net4j" version="4.1.300" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.net4j" version="4.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.net4j.jvm" version="4.1.400" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.net4j.db.h2" version="4.2.300" match="greaterOrEqual"/>
       <import plugin="org.h2" version="1.3.168" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.cdo.server" version="4.5.0.v20160607-1254"/>
+      <import feature="org.eclipse.emf.ecore" version="2.12.0.v20160420-0247"/>
+      <import feature="org.eclipse.rcptt.ecl.core" version="2.1.0.201604210752"/>
    </requires>
 
    <plugin
