@@ -14,6 +14,9 @@
       <repositories location="https://dl.bintray.com/cooperate-project/CooperateLicense/updatesite/1.0.0/" mirrorArtifacts="false">
         <features name="de.cooperateproject.license.feature.group"/>
       </repositories>
+      <repositories location="https://dl.bintray.com/cooperate-project/Externals/updatesite/latest/" mirrorArtifacts="false">
+        <bundles name="org.apache.activemq.all"/>
+      </repositories>
     </contributions>
   </validationSets>
   <configurations/>

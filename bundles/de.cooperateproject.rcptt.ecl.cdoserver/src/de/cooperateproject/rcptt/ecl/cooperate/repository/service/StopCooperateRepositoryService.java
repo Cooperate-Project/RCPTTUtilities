@@ -1,4 +1,4 @@
-package de.cooperateproject.rcptt.ecl.cdoserver.service;
+package de.cooperateproject.rcptt.ecl.cooperate.repository.service;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
@@ -7,14 +7,15 @@ import org.eclipse.rcptt.ecl.core.Command;
 import org.eclipse.rcptt.ecl.runtime.ICommandService;
 import org.eclipse.rcptt.ecl.runtime.IProcess;
 
-import de.cooperateproject.rcptt.ecl.cdoserver.service.impl.EmbeddedCdoServer;
+import de.cooperateproject.rcptt.ecl.cooperate.repository.service.impl.EmbeddedCdoServer;
+import de.cooperateproject.rcptt.ecl.cooperate.repository.service.impl.MessageServer;
 
-public class StopCdoServerService implements ICommandService {
+public class StopCooperateRepositoryService implements ICommandService {
 
 	@Override
 	public IStatus service(Command command, IProcess context) throws InterruptedException, CoreException {
 		EmbeddedCdoServer.getInstance().stop();
-		
+		MessageServer.stopBroker();
 		return Status.OK_STATUS;
 	}
 

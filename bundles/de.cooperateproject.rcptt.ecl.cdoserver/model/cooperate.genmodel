@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/de.cooperateproject.rcptt.ecl.cooperate/src-gen"
+    modelPluginID="de.cooperateproject.rcptt.ecl.cooperate" modelName="Cooperate"
+    modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    colorProviders="true" usedGenPackages="../../org.eclipse.rcptt.ecl.core/model/ecl.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    importOrganizing="true">
+  <foreignModel>cooperate.ecore</foreignModel>
+  <genPackages prefix="Cooperate" basePackage="de.cooperateproject.rcptt.ecl.cooperate"
+      disposableProviderFactory="true" ecorePackage="cooperate.ecore#/">
+    <genClasses ecoreClass="cooperate.ecore#//StartCooperateRepository"/>
+    <genClasses ecoreClass="cooperate.ecore#//StopCooperateRepository"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,4 +1,4 @@
-package de.cooperateproject.rcptt.ecl.cdoserver.service.impl;
+package de.cooperateproject.rcptt.ecl.cooperate.repository.service.impl;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -19,32 +19,35 @@ import org.eclipse.net4j.db.h2.H2Adapter;
 import org.eclipse.net4j.tcp.TCPUtil;
 import org.eclipse.net4j.util.container.ContainerUtil;
 import org.eclipse.net4j.util.container.IManagedContainer;
+import org.eclipse.net4j.util.om.OMPlatform;
 import org.h2.jdbcx.JdbcDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import de.cooperateproject.rcptt.ecl.cooperate.constants.RepositoryConstants;
+import de.cooperateproject.rcptt.ecl.cooperate.logger.OMLogHandler2Logger;
+import de.cooperateproject.rcptt.ecl.cooperate.logger.OMTraceHandler2Logger;
 
 public class EmbeddedCdoServer {
-
-	private static final String ADDR = "localhost";
-	private static final int PORT = 2036;
-
+    
 	private static EmbeddedCdoServer instance;
-
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmbeddedCdoServer.class);
+	
 	public static EmbeddedCdoServer getInstance() {
 		if (instance == null) {
-			// Enable logging and tracing
-			/*
-			 * OMPlatform.INSTANCE.addLogHandler(PrintLogHandler.CONSOLE);
-			 * OMPlatform.INSTANCE.addTraceHandler(PrintTraceHandler.CONSOLE);
-			 * OMPlatform.INSTANCE.setDebugging(true);
-			 */
+		    // Enable logging and tracing
+		    OMPlatform.INSTANCE.addLogHandler(new OMLogHandler2Logger(LOGGER));
+            OMPlatform.INSTANCE.addTraceHandler(new OMTraceHandler2Logger(LOGGER));
+            OMPlatform.INSTANCE.setDebugging(true);
 
-			instance = new EmbeddedCdoServer("ui-tests-repo");
+			instance = new EmbeddedCdoServer(RepositoryConstants.REPO_NAME);
 		}
 
 		return instance;
 	}
 
 	private static String getAcceptorDetailsString() {
-		return ADDR + ":" + PORT;
+		return RepositoryConstants.HOST_NAME + ":" + RepositoryConstants.CDO_PORT;
 	}
 
 	private final String repoName;
@@ -59,10 +62,11 @@ public class EmbeddedCdoServer {
 		if (containerOrNull != null) {
 			stop();
 		}
-		JdbcDataSource dataSource = getJdbcDataSource("jdbc:h2:file:" + repoName);
+		JdbcDataSource dataSource = getJdbcDataSource("jdbc:h2:mem:" + repoName);
 		try {
 			DBUtil.dropAllTables(dataSource.getConnection(), repoName);
 		} catch (SQLException e) {
+		    LOGGER.error("Could not start embedded CDO server.", e);
 		}
 
 		IStore cdoStore = getStore(dataSource);
@@ -91,7 +95,10 @@ public class EmbeddedCdoServer {
 
 	private IStore getStore(JdbcDataSource dataSource) {
 		// Setup Store
-		IMappingStrategy mappingStrategy = CDODBUtil.createHorizontalMappingStrategy(true);
+		IMappingStrategy mappingStrategy = CDODBUtil.createHorizontalMappingStrategy(true, true);
+		HashMap<String, String> props = new HashMap<>();
+		props.put(IMappingStrategy.Props.QUALIFIED_NAMES, "true");
+		mappingStrategy.setProperties(props);
 		IDBAdapter dbAdapter = new H2Adapter();
 		IDBConnectionProvider dbConnectionProvider = DBUtil.createConnectionProvider(dataSource);
 

@@ -45,6 +45,11 @@
 			<url>https://dl.bintray.com/cooperate-project/CooperateLicense/updatesite/1.0.0/</url>
 			<layout>p2</layout>
 		</repository>
+		<repository>
+			<id>cooperate-externals</id>
+			<url>https://dl.bintray.com/cooperate-project/Externals/updatesite/latest/</url>
+			<layout>p2</layout>
+		</repository>
 	</repositories>
 
 	<build>

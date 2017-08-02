@@ -6,25 +6,26 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated cdoserver -->
-      <package
-            uri="http://cooperateproject.de/rcptt/ecl/cdoserver.ecore"
-            class="de.cooperateproject.rcptt.ecl.cdoserver.CdoserverPackage"
-            genModel="model/cdoserver.genmodel"/>
-   </extension>
    <extension
          point="org.eclipse.rcptt.ecl.core.scriptlet">
       <scriptlet
-            class="de.cooperateproject.rcptt.ecl.cdoserver.service.StartCdoServerService"
-            name="StartCdoServer"
-            namespace="http://cooperateproject.de/rcptt/ecl/cdoserver.ecore">
+            class="de.cooperateproject.rcptt.ecl.cooperate.repository.service.StartCooperateRepositoryService"
+            name="StartCooperateRepository"
+            namespace="http://cooperateproject.de/rcptt/ecl/cooperate.ecore">
       </scriptlet>
       <scriptlet
-            class="de.cooperateproject.rcptt.ecl.cdoserver.service.StopCdoServerService"
-            name="StopCdoServer"
-            namespace="http://cooperateproject.de/rcptt/ecl/cdoserver.ecore">
+            class="de.cooperateproject.rcptt.ecl.cooperate.repository.service.StopCooperateRepositoryService"
+            name="StopCooperateRepository"
+            namespace="http://cooperateproject.de/rcptt/ecl/cooperate.ecore">
       </scriptlet>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cooperate -->
+      <package
+            uri="http://cooperateproject.de/rcptt/ecl/cooperate.ecore"
+            class="de.cooperateproject.rcptt.ecl.cooperate.cooperate.CooperatePackage"
+            genModel="model/cooperate.genmodel"/>
    </extension>
 
 </plugin>
