@@ -2,7 +2,7 @@
 <feature
       id="de.cooperateproject.rcptt.ecl.cooperate.feature"
       label="%featureName"
-      version="1.2.0.qualifier"
+      version="1.2.0"
       license-feature="de.cooperateproject.license"
       license-feature-version="1.0.0">
 
