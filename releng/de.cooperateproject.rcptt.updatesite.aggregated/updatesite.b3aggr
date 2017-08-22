@@ -5,7 +5,7 @@
       <repositories location="../de.cooperateproject.rcptt.updatesite/target/repository"/>
     </contributions>
     <contributions label="externals">
-      <repositories location="http://download.eclipse.org/releases/neon/" mirrorArtifacts="false">
+      <repositories location="http://download.eclipse.org/releases/oxygen/" mirrorArtifacts="false">
         <features name="org.eclipse.emf.cdo.feature.group"/>
         <features name="org.eclipse.emf.cdo.server.feature.group"/>
         <features name="org.eclipse.rcptt.ecl.core.feature.group"/>
@@ -14,7 +14,7 @@
       <repositories location="https://dl.bintray.com/cooperate-project/CooperateLicense/updatesite/1.0.0/" mirrorArtifacts="false">
         <features name="de.cooperateproject.license.feature.group"/>
       </repositories>
-      <repositories location="https://dl.bintray.com/cooperate-project/Externals/updatesite/latest/" mirrorArtifacts="false">
+      <repositories location="https://dl.bintray.com/cooperate-project/Externals/updatesite/1.0.0/" mirrorArtifacts="false">
         <bundles name="org.apache.activemq.all"/>
       </repositories>
     </contributions>
