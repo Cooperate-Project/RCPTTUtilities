@@ -15,6 +15,7 @@
 
 	<modules>
 		<module>de.cooperateproject.rcptt.ecl.cdoserver.feature</module>
+		<module>de.cooperateproject.rcptt.thirdparty</module>
 	</modules>
 
 </project>
