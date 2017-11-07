@@ -14,7 +14,7 @@
 	<name>Feature Modules</name>
 
 	<modules>
-		<module>de.cooperateproject.rcptt.ecl.cdoserver.feature</module>
+		<module>de.cooperateproject.rcptt.ecl.cooperate.feature</module>
 		<module>de.cooperateproject.rcptt.thirdparty.feature</module>
 	</modules>
 
