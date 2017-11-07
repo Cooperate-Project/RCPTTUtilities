@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.cooperateproject.rcptt</groupId>
 		<artifactId>releng</artifactId>
-		<version>1.4.0</version>
+		<version>1.4.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 
